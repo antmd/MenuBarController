@@ -8,27 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		329F6C1019FE633600439723 /* MenuBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 329F6C0F19FE633600439723 /* MenuBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		329F6C1619FE633600439723 /* MenuBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329F6C0A19FE633600439723 /* MenuBarController.framework */; };
-		329F6C1D19FE633600439723 /* MenuBarControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 329F6C1C19FE633600439723 /* MenuBarControllerTests.m */; };
+		329F6C2719FE661600439723 /* MenuBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 329F6C2619FE661600439723 /* MenuBarController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		329F6C1719FE633600439723 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 329F6C0119FE633600439723 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 329F6C0919FE633600439723;
-			remoteInfo = MenuBarController;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		329F6C0A19FE633600439723 /* MenuBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MenuBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		329F6C0E19FE633600439723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		329F6C0F19FE633600439723 /* MenuBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuBarController.h; sourceTree = "<group>"; };
-		329F6C1519FE633600439723 /* MenuBarControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuBarControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		329F6C1B19FE633600439723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		329F6C1C19FE633600439723 /* MenuBarControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuBarControllerTests.m; sourceTree = "<group>"; };
+		329F6C2619FE661600439723 /* MenuBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,14 +26,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		329F6C1219FE633600439723 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				329F6C1619FE633600439723 /* MenuBarController.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,7 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				329F6C0C19FE633600439723 /* MenuBarController */,
-				329F6C1919FE633600439723 /* MenuBarControllerTests */,
 				329F6C0B19FE633600439723 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				329F6C0A19FE633600439723 /* MenuBarController.framework */,
-				329F6C1519FE633600439723 /* MenuBarControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				329F6C0F19FE633600439723 /* MenuBarController.h */,
+				329F6C2619FE661600439723 /* MenuBarController.m */,
 				329F6C0D19FE633600439723 /* Supporting Files */,
 			);
 			path = MenuBarController;
@@ -81,23 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				329F6C0E19FE633600439723 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		329F6C1919FE633600439723 /* MenuBarControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-				329F6C1C19FE633600439723 /* MenuBarControllerTests.m */,
-				329F6C1A19FE633600439723 /* Supporting Files */,
-			);
-			path = MenuBarControllerTests;
-			sourceTree = "<group>";
-		};
-		329F6C1A19FE633600439723 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				329F6C1B19FE633600439723 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -134,24 +95,6 @@
 			productReference = 329F6C0A19FE633600439723 /* MenuBarController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		329F6C1419FE633600439723 /* MenuBarControllerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 329F6C2319FE633600439723 /* Build configuration list for PBXNativeTarget "MenuBarControllerTests" */;
-			buildPhases = (
-				329F6C1119FE633600439723 /* Sources */,
-				329F6C1219FE633600439723 /* Frameworks */,
-				329F6C1319FE633600439723 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				329F6C1819FE633600439723 /* PBXTargetDependency */,
-			);
-			name = MenuBarControllerTests;
-			productName = MenuBarControllerTests;
-			productReference = 329F6C1519FE633600439723 /* MenuBarControllerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,9 +105,6 @@
 				ORGANIZATIONNAME = "Dmitry Nikolaev";
 				TargetAttributes = {
 					329F6C0919FE633600439723 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					329F6C1419FE633600439723 = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
@@ -182,20 +122,12 @@
 			projectRoot = "";
 			targets = (
 				329F6C0919FE633600439723 /* MenuBarController */,
-				329F6C1419FE633600439723 /* MenuBarControllerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		329F6C0819FE633600439723 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		329F6C1319FE633600439723 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,26 +141,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		329F6C1119FE633600439723 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				329F6C1D19FE633600439723 /* MenuBarControllerTests.m in Sources */,
+				329F6C2719FE661600439723 /* MenuBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		329F6C1819FE633600439723 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 329F6C0919FE633600439723 /* MenuBarController */;
-			targetProxy = 329F6C1719FE633600439723 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		329F6C1E19FE633600439723 /* Debug */ = {
@@ -265,7 +182,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -303,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -345,38 +262,6 @@
 			};
 			name = Release;
 		};
-		329F6C2419FE633600439723 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MenuBarControllerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		329F6C2519FE633600439723 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MenuBarControllerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -394,14 +279,6 @@
 			buildConfigurations = (
 				329F6C2119FE633600439723 /* Debug */,
 				329F6C2219FE633600439723 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		329F6C2319FE633600439723 /* Build configuration list for PBXNativeTarget "MenuBarControllerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				329F6C2419FE633600439723 /* Debug */,
-				329F6C2519FE633600439723 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
