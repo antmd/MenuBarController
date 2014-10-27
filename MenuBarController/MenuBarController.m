@@ -58,4 +58,9 @@
     }
 }
 
+- (NSView *) statusItemView {
+    return self.statusItem.button;
+}
+
+
 @end
