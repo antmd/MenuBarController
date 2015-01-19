@@ -100,7 +100,7 @@
 #pragma mark - Private
 
 - (BOOL) isYosemite {
-    return YES;
+    return [self.statusItem respondsToSelector:@selector(button)];
 }
 
 @end
