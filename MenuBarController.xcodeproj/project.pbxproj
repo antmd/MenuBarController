@@ -17,6 +17,8 @@
 		32A283681A6CE5E600D51798 /* MenuBarController.framework in Resources */ = {isa = PBXBuildFile; fileRef = 329F6C0A19FE633600439723 /* MenuBarController.framework */; };
 		32A2836B1A6CE61A00D51798 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A2836A1A6CE61A00D51798 /* MyViewController.xib */; };
 		32A2836E1A6CE62300D51798 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A2836D1A6CE62300D51798 /* MyViewController.m */; };
+		32A283731A6CF4DD00D51798 /* StatusItemButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A283711A6CF4DD00D51798 /* StatusItemButton.h */; };
+		32A283741A6CF4DD00D51798 /* StatusItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A283721A6CF4DD00D51798 /* StatusItemButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		32A2836A1A6CE61A00D51798 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
 		32A2836C1A6CE62300D51798 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		32A2836D1A6CE62300D51798 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		32A283711A6CF4DD00D51798 /* StatusItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemButton.h; sourceTree = "<group>"; };
+		32A283721A6CF4DD00D51798 /* StatusItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			children = (
 				329F6C0F19FE633600439723 /* MenuBarController.h */,
 				329F6C2619FE661600439723 /* MenuBarController.m */,
+				32A283711A6CF4DD00D51798 /* StatusItemButton.h */,
+				32A283721A6CF4DD00D51798 /* StatusItemButton.m */,
 				329F6C0D19FE633600439723 /* Supporting Files */,
 			);
 			path = MenuBarController;
@@ -133,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329F6C1019FE633600439723 /* MenuBarController.h in Headers */,
+				32A283731A6CF4DD00D51798 /* StatusItemButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32A283741A6CF4DD00D51798 /* StatusItemButton.m in Sources */,
 				329F6C2719FE661600439723 /* MenuBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -345,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -445,6 +453,7 @@
 				32A283601A6CE57500D51798 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

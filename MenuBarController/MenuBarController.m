@@ -7,8 +7,9 @@
 //
 
 #import "MenuBarController.h"
+#import "StatusItemButton.h"
 
-@interface MenuBarController ()
+@interface MenuBarController () <StatusItemButtonDelegate>
 
 @property (strong, nonatomic) NSStatusItem *statusItem;
 
@@ -20,47 +21,86 @@
 {
     self = [super init];
     if (self) {
+        
         self.image = image;
         self.menu = menu;
         self.handler = handler;
         
         self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
         
-        self.statusItem.button.image = image;
-        self.statusItem.button.appearsDisabled = NO;
-        self.statusItem.button.target = self;
-        self.statusItem.button.action = @selector(leftClick:);
-
-        __unsafe_unretained MenuBarController *weakSelf = self;
+        if ([self isYosemite]) {
+            [self initStatusItem10];
+        } else {
+            [self initStatusItem];
+        }
         
-        [NSEvent addLocalMonitorForEventsMatchingMask:
-         (NSRightMouseDownMask | NSLeftMouseDownMask) handler:^(NSEvent *incomingEvent) {
-
-             if (incomingEvent.type == NSLeftMouseDown) {
-                 weakSelf.statusItem.menu = nil;
-             }
-             
-             if (incomingEvent.type == NSRightMouseDown) {
-                 weakSelf.handler(NO);
-                 weakSelf.statusItem.menu = weakSelf.menu;
-             }
-             
-             return incomingEvent;
-         }];
-
     }
     return self;
 }
 
-- (IBAction)leftClick:(id)sender {
-    if (self.handler) {
-        self.handler(YES);
-    }
-}
-
 - (NSView *) statusItemView {
-    return self.statusItem.button;
+    
+    if ([self isYosemite]) {
+        return self.statusItem.button;
+    } else {
+        return self.statusItem.view;
+    }
+    
 }
 
+// Yosemite
+
+- (void) initStatusItem10 {
+    
+     self.statusItem.button.image = self.image;
+     self.statusItem.button.appearsDisabled = NO;
+     self.statusItem.button.target = self;
+     self.statusItem.button.action = @selector(leftClick10:);
+     
+     __unsafe_unretained MenuBarController *weakSelf = self;
+     
+     [NSEvent addLocalMonitorForEventsMatchingMask:
+     (NSRightMouseDownMask | NSLeftMouseDownMask) handler:^(NSEvent *incomingEvent) {
+     
+     if (incomingEvent.type == NSLeftMouseDown) {
+     weakSelf.statusItem.menu = nil;
+     }
+     
+     if (incomingEvent.type == NSRightMouseDown) {
+     weakSelf.handler(NO);
+     weakSelf.statusItem.menu = weakSelf.menu;
+     }
+     
+     return incomingEvent;
+     }];
+}
+
+- (IBAction)leftClick10:(id)sender {
+    self.handler(YES);
+}
+
+// Before Yosemite
+
+- (void) initStatusItem {
+    self.statusItem.highlightMode = YES;
+    StatusItemButton *button = [[StatusItemButton alloc] initWithImage:self.image];
+    button.delegate = self;
+    [self.statusItem setView:button];
+}
+
+- (void) statusItemButtonLeftClick: (StatusItemButton *) button {
+    self.handler(YES);
+}
+
+- (void) statusItemButtonRightClick: (StatusItemButton *) button {
+    self.handler(NO);
+    [self.statusItem popUpStatusItemMenu:self.menu];
+}
+
+#pragma mark - Private
+
+- (BOOL) isYosemite {
+    return YES;
+}
 
 @end
