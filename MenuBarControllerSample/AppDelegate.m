@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  MenuBarControllerSampleApp
+//  MenuBarControllerSample
 //
-//  Created by Dmitry Nikolaev on 27.10.14.
-//  Copyright (c) 2014 Dmitry Nikolaev. All rights reserved.
+//  Created by Дмитрий Николаев on 19.01.15.
+//  Copyright (c) 2015 Dmitry Nikolaev. All rights reserved.
 //
 
 #import "AppDelegate.h"
