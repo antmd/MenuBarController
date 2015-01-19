@@ -20,7 +20,7 @@
 @interface StatusItemButton : NSView
 
 @property (strong) NSImage *image;
-@property (weak) id<StatusItemButtonDelegate> delegate;
+@property (unsafe_unretained) id<StatusItemButtonDelegate> delegate;
 
 - (instancetype) initWithImage: (NSImage *) image;
 
