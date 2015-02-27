@@ -60,13 +60,13 @@
      __unsafe_unretained MenuBarController *weakSelf = self;
      
      [NSEvent addLocalMonitorForEventsMatchingMask:
-     (NSRightMouseDownMask | NSLeftMouseDownMask) handler:^(NSEvent *incomingEvent) {
+     (NSRightMouseDownMask | NSAlternateKeyMask | NSLeftMouseDownMask) handler:^(NSEvent *incomingEvent) {
      
      if (incomingEvent.type == NSLeftMouseDown) {
      weakSelf.statusItem.menu = nil;
      }
      
-     if (incomingEvent.type == NSRightMouseDown) {
+     if (incomingEvent.type == NSRightMouseDown || [incomingEvent modifierFlags] & NSAlternateKeyMask) {
      weakSelf.handler(NO);
      weakSelf.statusItem.menu = weakSelf.menu;
      }
