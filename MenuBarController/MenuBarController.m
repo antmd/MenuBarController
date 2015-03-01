@@ -38,6 +38,10 @@
     return self;
 }
 
+- (void) setImage: (NSImage *) image {
+    [self.statusItem setImage:(image)];
+}
+
 - (NSView *) statusItemView {
     
     if ([self isYosemite]) {
