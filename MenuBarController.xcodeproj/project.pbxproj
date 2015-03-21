@@ -48,6 +48,7 @@
 		32A2836D1A6CE62300D51798 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		32A283711A6CF4DD00D51798 /* StatusItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemButton.h; sourceTree = "<group>"; };
 		32A283721A6CF4DD00D51798 /* StatusItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemButton.m; sourceTree = "<group>"; };
+		32E73D111ABDAB5A00186370 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +73,7 @@
 		329F6C0019FE633600439723 = {
 			isa = PBXGroup;
 			children = (
+				32E73D111ABDAB5A00186370 /* README.md */,
 				329F6C0C19FE633600439723 /* MenuBarController */,
 				32A283461A6CE57500D51798 /* MenuBarControllerSample */,
 				329F6C0B19FE633600439723 /* Products */,
