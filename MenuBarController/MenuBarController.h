@@ -24,7 +24,7 @@ typedef void(^MenuBarControllerActionBlock)(BOOL active);
 
 @property (strong) NSMenu *menu;
 @property (copy) MenuBarControllerActionBlock handler;
-@property (strong) NSImage *image;
+@property (strong, nonatomic) NSImage *image;
 
 - (NSView *) statusItemView;
 
