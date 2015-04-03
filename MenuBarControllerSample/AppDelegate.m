@@ -27,12 +27,11 @@
 
 - (void) createMenuBarController {
     NSImage *image = [NSImage imageNamed:NSImageNameAddTemplate];
-    
+
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Menu"];
     NSMenuItem *item = [menu addItemWithTitle:NSLocalizedString(@"Quit",@"") action:nil keyEquivalent:@""];
     item.target = self;
     item.action = @selector(quit:);
-    
     
     __weak AppDelegate *weakSelf = self;
     self.menuBarController = [[MenuBarController alloc] initWithImage:image menu:menu handler:^(BOOL active) {

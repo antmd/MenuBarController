@@ -39,7 +39,14 @@
 }
 
 - (void) setImage: (NSImage *) image {
-    [self.statusItem setImage:(image)];
+    _image = image;
+    
+    if ([self isYosemite]) {
+        self.statusItem.button.image = image;
+    } else {
+        StatusItemButton *button = (StatusItemButton *)self.statusItem.view;
+        button.image = image;
+    }
 }
 
 - (NSView *) statusItemView {
