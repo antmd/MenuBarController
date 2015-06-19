@@ -36,7 +36,7 @@
     __weak AppDelegate *weakSelf = self;
     self.menuBarController = [[MenuBarController alloc] initWithImage:image menu:menu handler:^(BOOL active) {
         if (active) {
-            [weakSelf.popover showRelativeToRect:NSZeroRect ofView:[weakSelf.menuBarController statusItemView] preferredEdge:CGRectMinYEdge];
+            [weakSelf.popover showRelativeToRect:NSZeroRect ofView:[weakSelf.menuBarController statusItemView] preferredEdge:NSRectEdgeMinY];
         } else {
             [weakSelf.popover close];
         }
