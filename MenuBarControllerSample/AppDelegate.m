@@ -10,7 +10,7 @@
 #import "MyViewController.h"
 @import MenuBarController;
 
-@interface AppDelegate ()
+@interface AppDelegate () <MenuBarControllerDelegate>
 
 @property (strong) MenuBarController *menuBarController;
 @property (strong) NSPopover *popover;
@@ -33,14 +33,10 @@
     item.target = self;
     item.action = @selector(quit:);
     
-    __weak AppDelegate *weakSelf = self;
-    self.menuBarController = [[MenuBarController alloc] initWithImage:image menu:menu handler:^(BOOL active) {
-        if (active) {
-            [weakSelf.popover showRelativeToRect:NSZeroRect ofView:[weakSelf.menuBarController statusItemView] preferredEdge:NSRectEdgeMinY];
-        } else {
-            [weakSelf.popover close];
-        }
-    }];
+    self.menuBarController = [[MenuBarController alloc] initWithImage:image menu:menu];
+    self.menuBarController.delegate = self;
+    
+    [self.menuBarController showStatusItem];
 }
 
 - (void) createPopover {
@@ -56,5 +52,14 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+
+- (void) menuBarControllerStatusChanged: (BOOL) active {
+    if (active) {
+        [self.popover showRelativeToRect:NSZeroRect ofView:[self.menuBarController statusItemView] preferredEdge:NSRectEdgeMinY];
+    } else {
+        [self.popover close];
+    }
+}
+
 
 @end

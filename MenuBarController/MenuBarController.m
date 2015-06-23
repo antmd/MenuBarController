@@ -17,23 +17,11 @@
 
 @implementation MenuBarController
 
-- (instancetype) initWithImage: (NSImage *) image menu: (NSMenu *) menu handler: (MenuBarControllerActionBlock) handler
-{
+- (instancetype) initWithImage: (NSImage *) image menu: (NSMenu *) menu {
     self = [super init];
     if (self) {
-        
         self.image = image;
         self.menu = menu;
-        self.handler = handler;
-        
-        self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-        
-        if ([self isYosemite]) {
-            [self initStatusItem10];
-        } else {
-            [self initStatusItem];
-        }
-        
     }
     return self;
 }
@@ -59,6 +47,24 @@
     
 }
 
+- (void) showStatusItem {
+    if (!self.statusItem) {
+        self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+        if ([self isYosemite]) {
+            [self initStatusItem10];
+        } else {
+            [self initStatusItem];
+        }
+    }
+}
+
+- (void) hideStatusItem {
+    if (self.statusItem) {
+        [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItem];
+        self.statusItem = nil;
+    }
+}
+
 // Yosemite
 
 - (void) initStatusItem10 {
@@ -74,12 +80,15 @@
      (NSRightMouseDownMask | NSAlternateKeyMask | NSLeftMouseDownMask) handler:^(NSEvent *incomingEvent) {
      
      if (incomingEvent.type == NSLeftMouseDown) {
-     weakSelf.statusItem.menu = nil;
+         weakSelf.statusItem.menu = nil;
      }
      
      if (incomingEvent.type == NSRightMouseDown || [incomingEvent modifierFlags] & NSAlternateKeyMask) {
-     weakSelf.handler(NO);
-     weakSelf.statusItem.menu = weakSelf.menu;
+         if (weakSelf.handler) {
+             weakSelf.handler(NO);
+         }
+         [weakSelf.delegate menuBarControllerStatusChanged:NO];
+         weakSelf.statusItem.menu = weakSelf.menu;
      }
      
      return incomingEvent;
@@ -87,7 +96,10 @@
 }
 
 - (IBAction)leftClick10:(id)sender {
-    self.handler(YES);
+    if (self.handler) {
+        self.handler(YES);
+    }
+    [self.delegate menuBarControllerStatusChanged:YES];
 }
 
 // Before Yosemite
@@ -100,11 +112,17 @@
 }
 
 - (void) statusItemButtonLeftClick: (StatusItemButton *) button {
-    self.handler(YES);
+    if (self.handler) {
+        self.handler(YES);
+    }
+    [self.delegate menuBarControllerStatusChanged:YES];
 }
 
 - (void) statusItemButtonRightClick: (StatusItemButton *) button {
-    self.handler(NO);
+    if (self.handler) {
+        self.handler(NO);
+    }
+    [self.delegate menuBarControllerStatusChanged:NO];
     [self.statusItem popUpStatusItemMenu:self.menu];
 }
 
